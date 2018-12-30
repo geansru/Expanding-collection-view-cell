@@ -84,6 +84,42 @@ extension UltravisualLayout {
   
   override func prepare() {
     cache.removeAll(keepingCapacity: false)
+    
+    guard let collectionView = collectionView else {
+      assertionFailure("CollectionView expected to be set.")
+      return
+    }
+    
+    let standartHeight = UltravisualLayoutConstants.Cell.standardHeight
+    let featuredHeight = UltravisualLayoutConstants.Cell.featuredHeight
+    
+    var frame: CGRect = .zero
+    var y: CGFloat = 0
+    
+    for item in 0..<numberOfItems {
+      let indexPath = IndexPath(item: item, section: 0)
+      let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
+      
+      attributes.zIndex = item
+      var height = standartHeight
+      
+      if indexPath.item == featuredItemIndex {
+        let yOffset = standartHeight * nextItemPercentageOffset
+        y = collectionView.contentOffset.y - yOffset
+        height = featuredHeight
+      }
+      else if indexPath.item == (featuredItemIndex + 1) && indexPath.item != numberOfItems {
+        let maxY = y + standartHeight
+        height = standartHeight + max((featuredHeight - standartHeight) * nextItemPercentageOffset, 0)
+        y = maxY - height
+      }
+      
+      frame = CGRect(x: 0, y: y, width: width, height: height)
+      attributes.frame = frame
+      cache.append(attributes)
+      y = frame.maxY
+    }
+
   }
   
   // Return all attributes in the cache whose frame intersects with the rect passed to the method 

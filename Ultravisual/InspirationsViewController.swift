@@ -38,15 +38,22 @@ class InspirationsViewController: UICollectionViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    configureUI()
+  }
+  
+  // MARK: - Private methods
+  
+  private func configureUI() {
     if let patternImage = UIImage(named: "Pattern") {
       view.backgroundColor = UIColor(patternImage: patternImage)
     }
-    collectionView?.backgroundColor = .clear
-    
-    let layout = collectionViewLayout as! UICollectionViewFlowLayout
-    layout.itemSize = CGSize(width: collectionView!.bounds.width, height: 100)
+    configureCollectionView()
   }
+  
+  private func configureCollectionView() {
+    collectionView?.backgroundColor = .clear
+  }
+  
 }
 
 extension InspirationsViewController {
@@ -55,10 +62,9 @@ extension InspirationsViewController {
   }
   
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(
-        withReuseIdentifier: InspirationCell.reuseIdentifier, for: indexPath
-    )
-    cell.contentView.backgroundColor = colors[indexPath.item]
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InspirationCell.reuseIdentifier, for: indexPath)
+    guard let inspirationCell = cell as? InspirationCell else { return UICollectionViewCell() }
+    inspirationCell.inspiration = inspirations[indexPath.item]
     return cell
   }
 }

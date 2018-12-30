@@ -36,7 +36,7 @@
 		7B963E1D1ABC3CE900748FFC /* Inspiration.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Inspiration.swift; sourceTree = "<group>"; tabWidth = 2; };
 		7B963E1E1ABC3CE900748FFC /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		7B963E211ABC3D0D00748FFC /* InspirationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = InspirationCell.swift; sourceTree = "<group>"; tabWidth = 2; };
-		7B963E231ABC3D3300748FFC /* InspirationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationsViewController.swift; sourceTree = "<group>"; };
+		7B963E231ABC3D3300748FFC /* InspirationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = InspirationsViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		7B963E251ABC3DB600748FFC /* UltravisualLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = UltravisualLayout.swift; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
 
