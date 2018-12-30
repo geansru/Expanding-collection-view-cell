@@ -82,6 +82,12 @@ extension UltravisualLayout {
     return CGSize(width: width, height: contentHeight)
   }
   
+  override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+    let itemIndex = round(proposedContentOffset.y / dragOffset)
+    let yOffset = itemIndex * dragOffset
+    return CGPoint(x: 0, y: yOffset)
+  }
+  
   override func prepare() {
     cache.removeAll(keepingCapacity: false)
     

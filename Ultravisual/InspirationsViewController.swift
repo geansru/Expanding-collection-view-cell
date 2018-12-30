@@ -39,6 +39,7 @@ class InspirationsViewController: UICollectionViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureUI()
+    configureCollectionView()
   }
   
   // MARK: - Private methods
@@ -47,11 +48,11 @@ class InspirationsViewController: UICollectionViewController {
     if let patternImage = UIImage(named: "Pattern") {
       view.backgroundColor = UIColor(patternImage: patternImage)
     }
-    configureCollectionView()
+    collectionView?.backgroundColor = .clear
   }
   
   private func configureCollectionView() {
-    collectionView?.backgroundColor = .clear
+    collectionView.decelerationRate = .fast
   }
   
 }

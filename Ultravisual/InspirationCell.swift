@@ -3,9 +3,11 @@ import UIKit
 class InspirationCell: UICollectionViewCell {
   static let reuseIdentifier = String(describing: InspirationCell.self)
     
-  @IBOutlet private weak var imageView: UIImageView!
-  @IBOutlet private weak var imageCoverView: UIView!
-  @IBOutlet private weak var titleLabel: UILabel!
+  @IBOutlet private var imageView: UIImageView!
+  @IBOutlet private var imageCoverView: UIView!
+  @IBOutlet private var titleLabel: UILabel!
+  @IBOutlet private var detailsLabel: UILabel!
+  @IBOutlet private var speakerLabel: UILabel!
   
   var inspiration: Inspiration? {
     didSet {
@@ -15,6 +17,8 @@ class InspirationCell: UICollectionViewCell {
       }
       imageView.image = inspiration.backgroundImage
       titleLabel.text = inspiration.title
+      detailsLabel.text = inspiration.roomAndTime
+      speakerLabel.text = inspiration.speaker
     }
   }
   
@@ -32,6 +36,12 @@ class InspirationCell: UICollectionViewCell {
     let peaksAlphaDiff = maxAlpha - minAlpha
     let alphaRatio = peaksAlphaDiff * delta
     imageCoverView.alpha = maxAlpha - alphaRatio
+    
+    let scale = max(0.5, delta)
+    titleLabel.transform = CGAffineTransform(scaleX: scale, y: scale)
+    
+    detailsLabel.alpha = delta
+    speakerLabel.alpha = delta
   }
 
 }

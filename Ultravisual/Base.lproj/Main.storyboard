@@ -41,24 +41,44 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time, Room" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBo-9B-4Bg">
+                                            <rect key="frame" x="0.0" y="118" width="200" height="23.5"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Clg-Ej-ixE">
+                                            <rect key="frame" x="0.0" y="133.5" width="200" height="23.5"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="9B0-MB-gaO" firstAttribute="centerY" secondItem="n3U-hs-Bjw" secondAttribute="centerY" id="4nF-qD-Ovc"/>
+                                    <constraint firstAttribute="trailing" secondItem="Clg-Ej-ixE" secondAttribute="trailing" id="5xa-cv-YQI"/>
                                     <constraint firstItem="9B0-MB-gaO" firstAttribute="leading" secondItem="n3U-hs-Bjw" secondAttribute="leading" id="D3j-dY-t1U"/>
                                     <constraint firstItem="C8f-Ge-IsB" firstAttribute="leading" secondItem="n3U-hs-Bjw" secondAttribute="leading" id="E4c-bd-5tY"/>
                                     <constraint firstItem="C8f-Ge-IsB" firstAttribute="top" secondItem="n3U-hs-Bjw" secondAttribute="top" id="Hth-Ko-6Jo"/>
+                                    <constraint firstItem="Clg-Ej-ixE" firstAttribute="top" secondItem="uBo-9B-4Bg" secondAttribute="bottomMargin" id="J39-hk-ryi"/>
                                     <constraint firstAttribute="trailing" secondItem="kIz-eP-wFb" secondAttribute="trailing" id="Kn7-Nz-JXf"/>
                                     <constraint firstAttribute="trailing" secondItem="C8f-Ge-IsB" secondAttribute="trailing" id="VQw-bP-8ga"/>
+                                    <constraint firstItem="uBo-9B-4Bg" firstAttribute="top" secondItem="9B0-MB-gaO" secondAttribute="bottomMargin" id="Zjn-Ik-I1t"/>
                                     <constraint firstItem="kIz-eP-wFb" firstAttribute="leading" secondItem="n3U-hs-Bjw" secondAttribute="leading" id="fju-TW-bdi"/>
                                     <constraint firstAttribute="bottom" secondItem="C8f-Ge-IsB" secondAttribute="bottom" id="g0y-lC-HXC"/>
+                                    <constraint firstAttribute="trailing" secondItem="uBo-9B-4Bg" secondAttribute="trailing" id="mli-8n-aai"/>
                                     <constraint firstAttribute="trailing" secondItem="9B0-MB-gaO" secondAttribute="trailing" id="pGK-vp-b2L"/>
                                     <constraint firstItem="kIz-eP-wFb" firstAttribute="centerY" secondItem="n3U-hs-Bjw" secondAttribute="centerY" id="q2e-Kt-ARG"/>
+                                    <constraint firstItem="Clg-Ej-ixE" firstAttribute="leading" secondItem="n3U-hs-Bjw" secondAttribute="leading" id="tdk-u0-n0i"/>
+                                    <constraint firstItem="uBo-9B-4Bg" firstAttribute="leading" secondItem="n3U-hs-Bjw" secondAttribute="leading" id="zLv-wL-pO0"/>
                                 </constraints>
                                 <size key="customSize" width="200" height="200"/>
                                 <connections>
+                                    <outlet property="detailsLabel" destination="uBo-9B-4Bg" id="Ifh-uf-din"/>
                                     <outlet property="imageCoverView" destination="C8f-Ge-IsB" id="nIG-df-6Tr"/>
                                     <outlet property="imageView" destination="kIz-eP-wFb" id="vNK-5I-7fi"/>
+                                    <outlet property="speakerLabel" destination="Clg-Ej-ixE" id="xEZ-jX-Dep"/>
                                     <outlet property="titleLabel" destination="9B0-MB-gaO" id="Mf2-Zd-Vl7"/>
                                 </connections>
                             </collectionViewCell>
