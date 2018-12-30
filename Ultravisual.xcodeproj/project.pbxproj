@@ -57,7 +57,9 @@
 				7B963DEC1ABC36A900748FFC /* Ultravisual */,
 				7B963DEB1ABC36A900748FFC /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		7B963DEB1ABC36A900748FFC /* Products */ = {
 			isa = PBXGroup;
@@ -187,7 +189,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = "Razeware LLC";
+				ORGANIZATIONNAME = "Dmitry Roytman";
 				TargetAttributes = {
 					7B963DE91ABC36A900748FFC = {
 						CreatedOnToolsVersion = 6.2;
