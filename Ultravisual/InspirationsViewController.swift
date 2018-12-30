@@ -33,7 +33,7 @@ class InspirationsViewController: UICollectionViewController {
   let colors = UIColor.palette()
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
-    return UIStatusBarStyle.lightContent
+    return .lightContent
   }
   
   override func viewDidLoad() {
@@ -57,7 +57,9 @@ class InspirationsViewController: UICollectionViewController {
   
 }
 
+// UICollectionViewDataSource
 extension InspirationsViewController {
+  
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return inspirations.count
   }
@@ -68,4 +70,23 @@ extension InspirationsViewController {
     inspirationCell.inspiration = inspirations[indexPath.item]
     return cell
   }
+  
+}
+
+// UICollectionViewDelegate
+
+extension InspirationsViewController {
+  
+  override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    guard let layout = collectionView.collectionViewLayout as? UltravisualLayout else {
+      assertionFailure("Expected class of layout is UltravisualLayout.")
+      return
+    }
+    let offset = layout.dragOffset * CGFloat(indexPath.item)
+    if collectionView.contentOffset.y != offset {
+      let contentOffset = CGPoint(x: 0, y: offset)
+      collectionView.setContentOffset(contentOffset, animated: true)
+    }
+  }
+  
 }
